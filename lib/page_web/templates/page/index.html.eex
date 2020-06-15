@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h2>Inteligentny skaner CV</h2>
+  <p class="lead">Wyślij nam swoje dane a znajdziesz pracę marzeń.</p>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-12">
+    <%= form_for @conn, page_path(@conn, :new), [as: :form, multipart: true], fn f -> %>
+      <div class="form-group">
+        <label for="input1">Adres Email</label>
+          <%= text_input f, :email, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="input2">Wiek</label>
+          <%= text_input f, :age, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="input2">CV</label>
+          <%= file_input f, :file, class: "form-control" %>
+      </div>
+      <%= submit "Wyślij", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
